@@ -8,24 +8,23 @@ import org.apache.commons.math3.linear.RealMatrix;
 
 public class Polygon {
 	private int degree;
+	private int polygon_index;
+	private boolean backfacing;
 	
 	public int getDegree() {
 		return degree;
 	}
-
-
+	
 	private List<Integer> pointIndex;  // Point's consequence is clockwise
 	
 	public List<Integer> getPointIndex() {
 		return pointIndex;
 	}
 
-
-	private boolean backfacing;
-	
-	public Polygon(int degree) {
+	public Polygon(int degree,int pindex) {
 		super();
 		this.degree = degree;
+		this.polygon_index = pindex;
 		pointIndex = new ArrayList<>();
 		boolean backfacing = false;
 	}
@@ -66,5 +65,10 @@ public class Polygon {
 	public boolean getBackfacing(){
 		return backfacing;
 	}
+
+	public int getIndex() {
+		return polygon_index;
+	}
+
 	
 }
