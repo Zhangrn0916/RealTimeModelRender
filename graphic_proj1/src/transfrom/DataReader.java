@@ -18,13 +18,14 @@ public class DataReader {
 	static List<Point> points; // points data in
 	static List<Polygon> polygons;
 	static Point center; 
-	static String datapath = "src/datasrc/house.d.txt";
+	static String datapath;
 	
-	public DataReader(){
-		read();
+	public DataReader(String datapath){
+		this.datapath = datapath;
+		read(this.datapath);
 	}
 	
-	public static void read() {
+	public static void read(String datapath) {
 
 		FileInputStream inputStream;
 		try {
@@ -33,7 +34,7 @@ public class DataReader {
 			StringBuilder strbuilder = new StringBuilder();
 			String str = null;
 			while ((str = bufferedReader.readLine()) != null) {
-				strbuilder.append(str);
+				strbuilder.append(str+" ");
 			}
 
 			// System.out.println(strbuilder.toString());
@@ -75,11 +76,12 @@ public class DataReader {
 		
 		// parseData into polygon
 		i = point_num * 3 + 3;
+		int pindex = 0;
 		while (i < parseData.length) {
 			int degree = Integer.parseInt(parseData[i]);
 			//System.out.println(degree);
 			
-			Polygon p = new Polygon(degree);
+			Polygon p = new Polygon(degree,pindex++);
 			for (int j = 1; j <= degree; j++) {
 				p.addPoint(Integer.parseInt(parseData[i+j])-1); 
 				//System.out.print(" " +(Integer.parseInt(parseData[i+j])-1));

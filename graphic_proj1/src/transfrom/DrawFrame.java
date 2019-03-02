@@ -7,11 +7,12 @@ import javax.swing.WindowConstants;
 
 import org.apache.commons.math3.linear.RealMatrix;
 
+import obj.Pixel;
 import obj.Polygon;
 
 public class DrawFrame extends JFrame {
 
-	public static final String TITLE = "3D ViewTransform";
+	public static final String TITLE = "3D2 ViewTransform";
 	public static final int WIDTH = 800;
 	public static final int HEIGHT = 800;
 	
@@ -23,8 +24,13 @@ public class DrawFrame extends JFrame {
 		panel = new DrawPanel(this);
 	}
 	
-	public void drawGraphics(List<Polygon> polygons,List<RealMatrix> pers_points){
-		panel.renewal(polygons,pers_points);
+	public void drawGraphics(Pixel[][] zbuffer){
+		panel.renewal(zbuffer);
+        setContentPane(panel);
+	}
+	
+	public void drawGraphics2(List<Polygon> polygons,List<RealMatrix> pers_points){
+		panel.renewal2(polygons,pers_points);
         setContentPane(panel);
 	}
 	
