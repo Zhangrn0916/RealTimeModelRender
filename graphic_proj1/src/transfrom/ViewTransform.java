@@ -45,7 +45,7 @@ public class ViewTransform {
 	private static float[] polygon_color_g;
 	private static float[] polygon_color_b;
 
-	static String datapath = "src/datasrc/bishop.d.txt";
+	static String datapath = "src/datasrc/house.d.txt";
 	
 	public static void main(String[] args) {
 		//A frame to show model
@@ -75,7 +75,7 @@ public class ViewTransform {
 		// Get U V N vector according to C p_ref and V_up
 		uvnMap = getUVNMap(C, P_ref, V_up);
 
-		double rotate_theta = 0;
+		double rotate_theta = Math.random()*2*Math.PI;
 	
 		if (uvnMap != null) {
 
