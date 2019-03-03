@@ -16,6 +16,9 @@ Based on Lab1, Using scan convert algorithm to color the polyygons of each objec
 Implemented the z-buffer algorithm to remove the hiding part of the behind object.
 Each polygon is colored differently in Main.java
 
+Limitation: scan_convert can process the points that are out of view frustum
+so when using bishop as data src, should adjust the Camera point to prevent exception.
+
 Lab3 Iillumination model:
 Ongoing
 
