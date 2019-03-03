@@ -22,6 +22,7 @@ Limitation: scan_convert can process the points that are out of view frustum
 so when using bishop as data src, should adjust the Camera point to prevent exception.
 
 Lab3 Iillumination model:
-
 Ongoing
+
+Would implement this model in C++ in the future
 
