@@ -1,5 +1,7 @@
 # RealTimeModelRender
 A Model Render Project of GWU Computer graphic II
+
+
 Lab1 : View transform 
 Implement a system to read in a geometric data of a polygonal object and display view transform view of the model,
 also includes rotation and backfacing culling features in ViewTransform.java
@@ -20,5 +22,6 @@ Limitation: scan_convert can process the points that are out of view frustum
 so when using bishop as data src, should adjust the Camera point to prevent exception.
 
 Lab3 Iillumination model:
+
 Ongoing
 
