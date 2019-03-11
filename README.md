@@ -7,13 +7,12 @@ also includes rotation and backfacing culling features in ViewTransform.java
 The camera position (C) is set by myself and the reference point(P_ref) is the geometric center of the model
 
 
-/***********************/
 Data format:
 a) the word "data" followed by the number of points and the number of polygons
 b) points given by: the x, y, z coordinates
 c) polygons given by: number of points in the polygon followed by vertex number in
 clockwise order (when looking from outside the object)
-/***********************/
+
 
 Lab2 Scan_convert and Z-buffer Algorithm
 Based on Lab1, Using scan convert algorithm to color the polyygons of each object.
