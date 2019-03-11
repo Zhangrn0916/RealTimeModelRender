@@ -27,7 +27,7 @@ Implemented Phong Illumintaion Model on Object.
 In this project, I assume  that the lightpoint and eyepoint are infinitely far awary.
 And there is only one light source.
 
-Apply Phong Illumintaion Model with Constant Shading and Gouraud Shading,
+Apply Phong Illumintaion Model with Constant Shading and Gouraud Shading in ViewTransform.java
 /** Phong Shading method is ongoing. **//
 
 Would implement this model in C++ in the future
