@@ -21,14 +21,20 @@ public class Illumintation {
 	
 	public static float getSpecular(float Is,float ks, Vector N,Vector L,Vector V,int n){
 		
-		Vector H = L.add(V);
-		float Ispecular = (float) (ks*Is*Math.pow((N.unify().dotPruduct(H.unify())),(double)n)) ;
-		if(Ispecular<0){
-			Ispecular = 0;
-		}else if(Ispecular > 1){
-			Ispecular = (float) 1.0;
-		}
-		return Ispecular;
+		 Vector H = L.add(V);
+		 double costheta = N.unify().dotPruduct(H.unify());
+		 if(costheta <0){
+			 return 0;
+		 }
+		
+		 float Ispecular = (float) (ks*Is*Math.pow(costheta,(double)n)) ;
+		 if(Ispecular<0){
+			 return 0;
+		 }else if(Ispecular > 1){
+			 return 1;
+		 }
+		
+		 return Ispecular;
 		
 	}
 
