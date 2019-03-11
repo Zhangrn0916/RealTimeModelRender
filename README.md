@@ -23,7 +23,7 @@ Limitation: scan_convert can process the points that are out of view frustum
 so when using bishop as data src, should adjust the Camera point to prevent exception.
 
 Lab3 Iillumination model and Shading Model:
-Implemented Phong Illumintaion Model on Object.
+Implemented Phong Illumintaion Model on Object in Illumination.java
 In this project, I assume  that the lightpoint and eyepoint are infinitely far awary.
 And there is only one light source.
 
