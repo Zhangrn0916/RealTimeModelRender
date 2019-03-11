@@ -1,6 +1,5 @@
 # RealTimeModelRender
-A Model Render Project of GWU Computer graphic II
-
+A Model Render Project of Computer graphic 
 
 Lab1: View transform 
 Implement a system to read in a geometric data of a polygonal object and display view transform view of the model,
