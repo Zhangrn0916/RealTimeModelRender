@@ -84,7 +84,7 @@ public class DataReader {
 			Polygon p = new Polygon(degree,pindex++);
 			for (int j = 1; j <= degree; j++) {
 				p.addPoint(Integer.parseInt(parseData[i+j])-1); 
-				//System.out.print(" " +(Integer.parseInt(parseData[i+j])-1));
+				
 			}
 			//System.out.println(" ");
 			polygons.add(p);
