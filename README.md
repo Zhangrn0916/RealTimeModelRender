@@ -23,6 +23,9 @@ so when using bishop as data src, should adjust the Camera point to prevent exce
 
 Lab3 Iillumination model:
 Implemented Phong Illumintaion Model on Object
+In this project, I assume  that the light and eyepoint is infinitely far awary.
+And there is only one light source.
+
 Apply Phong Illumintaion Model with Constant Shading and Gouraud Shading,
 /** Phong Shading method is ongoing. **//
 
