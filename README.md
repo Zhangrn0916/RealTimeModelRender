@@ -22,7 +22,9 @@ Limitation: scan_convert can process the points that are out of view frustum
 so when using bishop as data src, should adjust the Camera point to prevent exception.
 
 Lab3 Iillumination model:
-Ongoing
+Implemented Phong Illumintaion Model on Object
+Apply Phong Illumintaion Model with Constant Shading and Gouraud Shading,
+/** Phong Shading method is ongoing. **//
 
 Would implement this model in C++ in the future
 
