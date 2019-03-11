@@ -43,6 +43,14 @@ public class Vector {
 		return new Vector(xx,yy,zz);
 	}
 	
+	public Vector getReverse(){
+		return new Vector(-this.x,-this.y,-this.z);
+	}
+	
+	public Vector multiply(double a){
+		return new Vector(a*this.x,a*this.y,a*this.z);
+	}
+	
 	
 	public double dotPruduct(Vector a) {
 		return this.x * a.x + this.y * a.y + this.z*a.z;
@@ -50,6 +58,10 @@ public class Vector {
 	
 	public double length() {
 		return Math.sqrt(this.x * this.x + this.y * this.y + this.z*this.z);
+	}
+	
+	public Vector add(Vector b){
+		return new Vector(this.x+b.x,this.y+b.y,this.z+this.z);
 	}
 
 	public double x;

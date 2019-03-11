@@ -1,5 +1,7 @@
 package obj;
 
+import java.util.List;
+
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.apache.commons.math3.linear.RealMatrix;
 
@@ -8,7 +10,7 @@ public class Point {
 	public double x;
 	public double y;
 	public double z;
-	
+		
 	public Point(double x, double y, double z) {
 		this.x = x;
 		this.y = y;

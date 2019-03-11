@@ -7,12 +7,18 @@ public class EdgeItem implements Comparable<EdgeItem>{
 	//Prevent data type error in double and int
 	private double x;
 	private double x_delta;
-	Point p1;
-	Point p2;
+	private Point p1;
+	public int p1index;
+	private Point p2;
+	public int p2index;
 	
-	public EdgeItem(Point p1,Point p2,int pindex) {
+	
+	
+	public EdgeItem(Point p1,int p1index,Point p2,int p2index,int pindex) {
 		this.p1 = p1;
 		this.p2 = p2;
+		this.p1index = p1index;
+		this.p2index = p2index;
 		this.polygon_index = pindex;
 		y_max = (p1.y > p2.y ? p1.y : p2.y);
 		

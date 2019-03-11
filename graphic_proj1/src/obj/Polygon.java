@@ -33,21 +33,19 @@ public class Polygon {
 		if(degree <= 1){
 			return null;
 		}
-		
-		if(degree >= 2){
-			
+		if(degree >= 3){
+
 			Vector v1 = new Vector(pointslist.get(pointIndex.get(0)),
 								   pointslist.get(pointIndex.get(1)));
 			
 			Vector v2 = new Vector(pointslist.get(pointIndex.get(1)),
 								   pointslist.get(pointIndex.get(2)));
-			
-			return v1.crossPruduct(v2);
+			return (v1.crossPruduct(v2)).unify();
 		}else{
-			return new Vector(pointslist.get(pointIndex.get(0)),
-					pointslist.get(pointIndex.get(1)));
+			return null;
 		}
 	}
+	
 	
 	public boolean addPoint(int p){
 		if(pointIndex.size() >= degree){
