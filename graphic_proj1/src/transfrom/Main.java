@@ -8,19 +8,13 @@ public class Main {
 	static final int HEIGHT = 800;
 
 	public static void main(String[] args) {
-		ViewTransform vt1 = new ViewTransform("src/datasrc/house.d.txt");
-		ViewTransform vt2 = new ViewTransform("src/datasrc/house.d.txt");
+		ViewTransform vt1 = new ViewTransform();
+		ViewTransform vt2 = new ViewTransform();
 
-		Pixel zbuffer1[][] = vt1.getZbuffer();
-		Pixel zbuffer2[][] = vt2.getZbuffer();
+		Pixel zbuffer1[][] = vt1.renderIntoPixel("src/datasrc/house.d.txt");
+		Pixel zbuffer2[][] = vt2.renderIntoPixel("src/datasrc/ball.d.txt");
 		
-		for (int y = 0; y < HEIGHT; y++) {
-			for (int x = 0; x < WIDTH; x++) {
-				zbuffer2[x][y].setZ(zbuffer2[x][y].getZ()+0.7);
-			}
-		}	
-
-
+		//Compare Zbuffer of two object
 		for (int y = 0; y < HEIGHT; y++) {
 			for (int x = 0; x < WIDTH; x++) {
 				if (zbuffer1[x][y].getZ() > zbuffer2[x][y].getZ()) {

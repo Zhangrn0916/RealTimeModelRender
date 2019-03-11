@@ -59,28 +59,6 @@ public class DrawPanel extends JPanel {
 				g2d.drawLine(x, y, x, y);
 			}
 		}
-//        for(int i=0;i<polygons.size();i++){
-//        	if(polygons.get(i).getBackfacing()){
-//        		continue;
-//        	}else{
-//        		int nPoints = polygons.get(i).getDegree();
-//        		int[] xPoints = new int[nPoints];
-//        		int[] yPoints = new int[nPoints];
-//        		List<Integer> pointIndex = polygons.get(i).getPointIndex();
-//        		
-//        		for(int j=0;j<nPoints ;j++){
-//        			double x = pers_points.get(pointIndex.get(j)).getEntry(0, 0);
-//        			double y = pers_points.get(pointIndex.get(j)).getEntry(1, 0);
-//        			
-//        			//convert x y into width and height of the frame
-//        			xPoints[j] = (int)(width * ((x+1.0)/2.0));
-//        			yPoints[j] = (int)(height * ((y+1.0)/2.0));
-//        			
-//        		}
-//        		g2d.drawPolygon(xPoints, yPoints, nPoints );
-//        	}
-//        
-//        }
 
 }
 
