@@ -34,7 +34,7 @@ public class ViewTransform {
 	private static double h = 10.0;
 	private static double f = 80.0;
 
-	private static final boolean doBackface = true;
+	private static final boolean doBackface = false;
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 800;
 
@@ -45,7 +45,7 @@ public class ViewTransform {
 	// 0:constant shading
 	// 1:gouraud shading
 	// 2: shading
-	private static int shading_flag = 1;
+	private static int shading_flag = 0;
 
 	// Light Parameter
 	private static Vector L;
@@ -63,8 +63,8 @@ public class ViewTransform {
 	private static int roughnessN = 4;
 
 	// Specular Light Parameters
-	private static float Is = (float) 0.9;
-	private static float ks = (float) 0.8;
+	private static float Is = (float) 0.7;
+	private static float ks = (float) 0.7;
 
 	// Diffuse Light Parameters
 	private static float Id = (float) 0.4;
@@ -88,7 +88,7 @@ public class ViewTransform {
 	private static void initial(DataReader dr) {
 
 		// Set Camera position
-		C = new Point(7, 7, -7);
+		C = new Point(3, 6, 12);
 		P_ref = dr.center;
 		V_up = new Vector(0.0, 0.0, 1.0);
 
@@ -104,7 +104,7 @@ public class ViewTransform {
 		light_color_b = (float) 0.5;;
 
 		V = new Vector(P_ref, C).unify();
-		L = new Vector(0, 6, -4).unify();
+		L = new Vector(-50, -10, 0).unify();
 		//L = new Vector(P_ref.x -C.x-8, P_ref.y-C.y-12, P_ref.z -C.z-1).unify();
 
 		polygon_Intensity = new float[polygons.size()];
@@ -308,7 +308,7 @@ public class ViewTransform {
 	private static void backfacingCulling(List<RealMatrix> pers_points) {
 		for (int i = 0; i < polygons.size(); i++) {
 			Vector normal = polygons.get(i).getNormal(pers_points);
-			if (normal.z >= 0) {
+			if (normal.z <= 0) {
 				polygons.get(i).setBackfacing(true);
 			}
 		}
@@ -424,8 +424,6 @@ public class ViewTransform {
 						continue;
 					}
 
-					
-					
 					// get Z here
 					Point ap1 = aetRow.get(l).getP1();
 					Point ap2 = aetRow.get(l).getP2();
@@ -442,7 +440,7 @@ public class ViewTransform {
 							double zp = za + (xp - xa) * delta_z;
 							System.out.println("zp: "+zp);
 							// Add polygon_index and corresponding zp to pixel
-							if (zbuffer[xp][iteratorY].getColored() == false || zbuffer[xp][iteratorY].getZ() < zp) {
+							if (zbuffer[xp][iteratorY].getColored() == false || zbuffer[xp][iteratorY].getZ() > zp) {
 								zbuffer[xp][iteratorY].setRGBZ(
 										getColorByIntensity(object_color_r, light_color_r, polygon_Intensity[j]),
 										getColorByIntensity(object_color_g, light_color_g, polygon_Intensity[j]),
@@ -466,7 +464,7 @@ public class ViewTransform {
 							float Ip = (float) (Ixa + (xp - xa) * delta_I);
 
 							// Add polygon_index and corresponding zp to pixel
-							if (zbuffer[xp][iteratorY].getColored() == false || zbuffer[xp][iteratorY].getZ() < zp) {
+							if (zbuffer[xp][iteratorY].getColored() == false || zbuffer[xp][iteratorY].getZ() > zp) {
 								zbuffer[xp][iteratorY].setRGBZ(getColorByIntensity(object_color_r,light_color_r, Ip),
 										getColorByIntensity(object_color_g,light_color_g, Ip),
 										getColorByIntensity(object_color_b,light_color_b, Ip), zp);
@@ -489,7 +487,6 @@ public class ViewTransform {
 						double xb_x = norm_bp1.x + (norm_bp2.x - norm_bp1.x) * (iteratorY - bp1.y) / (bp2.y - bp1.y);
 						double xb_y = norm_bp1.y + (norm_bp2.y - norm_bp1.y) * (iteratorY - bp1.y) / (bp2.y - bp1.y);
 						double xb_z = norm_bp1.z + (norm_bp2.z - norm_bp1.z) * (iteratorY - bp1.y) / (bp2.y - bp1.y);
-
 						// Vector xb_n = new Vector(xb_x, xb_y, xb_z).unify();
 
 						// Using coherence Interpolate Normal
@@ -513,8 +510,7 @@ public class ViewTransform {
 											roughnessN);
 
 							// Add polygon_index and corresponding zp to pixel
-							if (zbuffer[xp][iteratorY].getColored() == false || zbuffer[xp][iteratorY].getZ() < zp) {
-								
+							if (zbuffer[xp][iteratorY].getColored() == false || zbuffer[xp][iteratorY].getZ() > zp) {
 								zbuffer[xp][iteratorY].setRGBZ(getColorByIntensity(object_color_r,light_color_r, Ip),
 										getColorByIntensity(object_color_g,light_color_g, Ip),
 										getColorByIntensity(object_color_b,light_color_b, Ip), zp);
@@ -540,7 +536,6 @@ public class ViewTransform {
 	}
 
 	// Lab3
-
 	private static void constantShading_preprocess(List<RealMatrix> points) {
 		for (int i = 0; i < polygons.size(); i++) {
 			Vector norm = polygons.get(i).getNormal(points);
