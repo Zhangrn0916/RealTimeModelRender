@@ -28,6 +28,9 @@ In this project, I assume  that the lightpoint and eyepoint are infinitely far a
 And there is only one light source.
 
 Apply Phong Illumintaion Model with Constant Shading and Gouraud Shading and Phong Shading in ViewTransform.java
+In my illumination model, I assumes that the light source and eye-point are infinite far away.
 
-Would implement this model in C++ in the future
+Lab4
+Texture Mapping is on going 
+
 
