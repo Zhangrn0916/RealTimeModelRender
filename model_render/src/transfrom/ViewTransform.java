@@ -34,7 +34,7 @@ public class ViewTransform {
 	private static double h = 10.0;
 	private static double f = 80.0;
 
-	private static final boolean doBackface = false;
+	private static final boolean doBackface = true;
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 800;
 
@@ -60,11 +60,11 @@ public class ViewTransform {
 	private static float light_color_b;
 
 	// Roughness constant on surface
-	private static int roughnessN = 4;
+	private static int roughnessN = 8;
 
 	// Specular Light Parameters
-	private static float Is = (float) 0.7;
-	private static float ks = (float) 0.7;
+	private static float Is = (float) 0.9;
+	private static float ks = (float) 0.8;
 
 	// Diffuse Light Parameters
 	private static float Id = (float) 0.4;
@@ -498,9 +498,9 @@ public class ViewTransform {
 
 							double zp = za + (xp - xa) * delta_z;
 
-							double xp_x = xa_x + (xa - xp) * deltaX;
-							double xp_y = xa_y + (xa - xp) * deltaY;
-							double xp_z = xa_z + (xa - xp) * deltaZ;
+							double xp_x = xa_x + (xp - xa) * deltaX;
+							double xp_y = xa_y + (xp - xa) * deltaY;
+							double xp_z = xa_z + (xp - xa) * deltaZ;
 
 							Vector currNormal = new Vector(xp_x, xp_y, xp_z).unify();
 
