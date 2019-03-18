@@ -12,12 +12,12 @@ public class Main {
 		ViewTransform vt2 = new ViewTransform();
 
 		Pixel zbuffer1[][] = vt1.renderIntoPixel("src/datasrc/king.d.txt");
-		Pixel zbuffer2[][] = vt2.renderIntoPixel("src/datasrc/ball.d.txt");
+		Pixel zbuffer2[][] = vt2.renderIntoPixel("src/datasrc/house.d.txt");
 		
 		//Compare Zbuffer of two object
 		for (int y = 0; y < HEIGHT; y++) {
 			for (int x = 0; x < WIDTH; x++) {
-				if (zbuffer1[x][y].getZ() < zbuffer2[x][y].getZ()) {
+				if (zbuffer1[x][y].getZ() > zbuffer2[x][y].getZ()) {
 					zbuffer1[x][y].setRGBZ(zbuffer2[x][y].getR(), zbuffer2[x][y].getG(), zbuffer2[x][y].getB(),
 							zbuffer2[x][y].getZ());
 				}

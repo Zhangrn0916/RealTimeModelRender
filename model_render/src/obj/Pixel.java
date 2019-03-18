@@ -22,7 +22,7 @@ public class Pixel {
 		this.G = 0;
 		this.B = 0;
 		colored = false;
-		z = 0.0;
+		z = 10.0;
 	}
 	
 	public void setZ(double z){

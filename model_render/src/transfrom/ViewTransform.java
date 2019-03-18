@@ -45,7 +45,7 @@ public class ViewTransform {
 	// 0:constant shading
 	// 1:gouraud shading
 	// 2: shading
-	private static int shading_flag = 0;
+	private static int shading_flag = 1;
 
 	// Light Parameter
 	private static Vector L;
