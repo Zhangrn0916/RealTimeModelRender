@@ -26,9 +26,8 @@ Lab3 Iillumination model and Shading Model:
 Implemented Phong Illumintaion Model on Object in Illumination.java
 In this project, I assume  that the lightpoint and eyepoint are infinitely far awary.
 And there is only one light source.
-
-Apply Phong Illumintaion Model with Constant Shading and Gouraud Shading and Phong Shading in ViewTransform.java
-In my illumination model, I assumes that the light source and eye-point are infinite far away.
+Applied Phong Illumintaion Model with Constant Shading and Gouraud Shading and Phong Shading in ViewTransform.java
+Using shading_flag to determine shading model.(0 -- constant shading| 1 -- gouraud shading | 2 -- phong shading )
 
 Lab4
 Texture Mapping is on going 
